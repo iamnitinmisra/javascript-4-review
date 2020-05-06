@@ -83,9 +83,24 @@ funDip.addEventListener('click', e => {
 ```
 
 > Take plenty of time to review with them the pattern of adding event listeners as well as what an event is and what the event object is. These concepts will be very helpful moving into React.
+ - 1. specify which id you are looking for
+ - 2. add an eventListener of your choice of event
+ - 3. specify a callback function to change the property you desire
 
-7. Let's change the function to be more dynamic, we want to toggle between our two background colors when we click. The function should look something like this:
+7. Let's change the function to be more dynamic, we want to toggle between our two background colors when we click. The function should look something like this but it is broken:
 
+```js
+funDip.addEventListener('click', e => {
+  if (funDip.style.backgroundColor === '#bada55') {
+    funDip.style.backgroundColor = 'aqua'
+  } else {
+    funDip.style.backgroundColor = '#bada55'
+  }
+})
+```
+> NOTE: When you set the background color using a hex code, it will automatically convert to rgb values. 
+
+this is the correct code
 ```js
 funDip.addEventListener('click', e => {
   if (funDip.style.backgroundColor === 'rgb(186, 218, 85)') {
@@ -96,7 +111,6 @@ funDip.addEventListener('click', e => {
 })
 ```
 
-> NOTE: When you set the background color using a hex code, it will automatically convert to rgb values. Our check will need to take this into account. Let it fail the first time and have them help you figure out how to fix it.
 
 8. Let's also make our div grow when we click it:
 
